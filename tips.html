@@ -42,5 +42,35 @@ document.getElementById('result').innerHTML=result;
 
 </script>
 
+<form>
+    <input type="radio" id="*" value="times" onclick="chooseOp()" >
+    <label for="*">*</label></br>
+  
+    <input type="radio" id="/" value="divide" onclick="chooseOp()">
+    <label for="/">/</label></br>
+  
+    <input type="radio" id="**"  value="exponent" onclick="chooseOp()">
+    <label for="**">**</label></br>
+</form>
+
+<p id="results-2"> performed operation results</p>
+    
+<script>
+function chooseOp(){
+    var amt = document.getElementById("amount").value
+    var tip = document.getElementById("tip_increase").value
+    exponent=document.getElementById("**").checked 
+    times=document.getElementById("*").checked
+    divide=document.getElementById("/").checked
+    
+    if(exponent){
+        document.getElementById('results-2').innerHTML="<b>(Amount ** TipIncrease) Value is: </b>"+amt**tip
+    }else if(times){
+        document.getElementById('results-2').innerHTML="<b>(Amount * TipIncrease) Value is: </b>"+amt*tip
+    }else if(divide){
+        document.getElementById('results-2').innerHTML="<b>(Amount / TipIncrease) value is: </b>"+amt/tip
+    }
+}
+</script>
 </body>
 </html> 
