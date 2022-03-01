@@ -49,10 +49,29 @@ function orderComputer(){
     }else{
         my_computer.cell=false;
     }
-    
+
     document.getElementById("result").innerHTML="extra_memory: "+my_computer.memory+"<br> mouse: "+my_computer.mouse+" <br> Cell: "+my_computer.cell
 }
 </script>
 
+<form>
+    <label for="property">Enter a property name </label>
+    <input type ="text" id="property"  value="engraved"> <br>
+
+    <label for="value">Enter a value</label>
+    <input type ="text" id="propertyvalue" > <br>
+
+    <input type="button" onclick="updateComputer()" value="Update the computer">
+</form>
+<p id="result1">Updated result</p>
+<script>
+    function updateComputer(){
+        var pname=document.getElementById("property").value
+        var pvalue=document.getElementById("propertyvalue").value
+        my_computer[pname]=pvalue
+        document.getElementById("result1").innerHTML = "my_computer[]=  " + JSON.stringify(my_computer) +"<b>Successfully updated</b>";
+
+    }
+</script>
 </body>
 </html> 
