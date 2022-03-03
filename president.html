@@ -3,6 +3,37 @@
     <head>
         <title>President(WAAssignment-6)</title>
     </head>
+    <style>
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+        
+        p {
+            background-color: rgb(52, 204, 141);
+            color: rgb(25, 26, 23);
+            display: inline;
+        }
+        
+        p:hover {
+            background-color: rgb(233, 186, 223);
+            color: black;
+            display: inline;
+        }
+
+        h1 {
+            background-color: aliceblue;
+            color: rgb(5, 47, 90);
+            display: block;
+        }
+        
+        h2 {
+            background-color: rgb(32, 73, 7);
+            color: rgb(219, 241, 13);
+            display: inline-block;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        </style>
  
 <body>
     <h1>President guess by Sidhartha Gundarapu</h1>
@@ -23,7 +54,7 @@
 
 <script>
 var correct = 0;
-var wrong = 0; 
+var wrong = 0;
 
 function checkGuess(){
     console.log("Getting form values")
@@ -39,9 +70,19 @@ function checkGuess(){
         wrong+=1;
         alert("Wrong President")
         out.innerHTML = wrong
-    }
+    
     out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
+    }
+    if(wrong >=3){
+        wrongguess()
+    }
+
 }
+
+function wrongguess(){
+        alert("Sorry,game over")
+}
+
 </script>
 
 <div class="container">
@@ -67,4 +108,4 @@ function checkGuess(){
     </script>
 </div>
 </body>
-</html> 
+</html>
